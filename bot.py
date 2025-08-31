@@ -86,23 +86,36 @@ def user_input(user_question):
 # Streamlit App
 # ================================
 def main():
-    st.set_page_config("Chat with PDF")
-    st.header("📄 Chat with your PDFs")
+    st.set_page_config(page_title="MultiDoc-AI", page_icon="📑")
+    st.header("Chat with your PDFs")
 
     user_question = st.text_input("Ask a Question from the PDF Files")
     if user_question:
         user_input(user_question)
 
     with st.sidebar:
-        st.title("📂 Menu")
+        st.title("Menu")
         pdf_docs = st.file_uploader("Upload PDF Files", accept_multiple_files=True)
         if st.button("Submit & Process"):
             with st.spinner("Processing..."):
                 raw_text = get_pdf_text(pdf_docs)
                 text_chunks = get_text_chunks(raw_text)
                 get_vector_store(text_chunks)
-                st.success("✅ Processing Complete")
+                st.success("Processing Complete")
+
+            # Developer signature at bottom
+        st.markdown(
+            """
+            <hr>
+            <p style='text-align: center; font-size: 12px; color: gray;'>
+            Developed by <a href='https://mahfuzul-islam-rafi-portfolio.netlify.app/#home' target='_blank'>Sheikh Mahfuzul Islam Rafi</a>
+            </p>
+            """, 
+            unsafe_allow_html=True
+        )
+
 
 if __name__ == "__main__":
     main()
+
 
