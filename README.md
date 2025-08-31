@@ -1,45 +1,62 @@
-# Chat with Multiple PDFs using Gemini & LangChain
+# MultiDoc AI
 
-This project lets you **interact with multiple PDF documents** using natural language, powered by **Google Gemini Pro**, **LangChain**, and **FAISS** for vector-based semantic search.
+![Python](https://img.shields.io/badge/Python-3.13-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.49.1-orange)
+![LangChain](https://img.shields.io/badge/LangChain-0.3.27-green)
+![FAISS](https://img.shields.io/badge/FAISS-1.12.0-red)
 
-Upload multiple PDFs, ask your questions, and receive context-based answers directly from the documents!
+**MultiDoc AI** is a Streamlit web application that allows you to **chat with multiple PDF files**. Upload your PDFs, process them, and ask questions—powered by **Google Gemini AI** through LangChain.  
 
----
-
-##  Features
-
-- ✅ Upload and process **multiple PDF files**
-- ✅ Extract and split text into **searchable chunks**
-- ✅ Use **Google Generative AI Embeddings**
-- ✅ Store data using **FAISS Vector Database**
-- ✅ Query and get detailed answers using **Gemini Pro (gemini-2.5-pro)**
-- ✅ Simple, user-friendly **Streamlit interface**
+The app uses **FAISS** for vector embeddings to retrieve relevant context from your PDFs for accurate and context-aware answers.
 
 ---
 
-##  Tech Stack
+## Live Demo
 
-- [Streamlit](https://streamlit.io/) – Web App UI
-- [PyPDF2](https://pypi.org/project/PyPDF2/) – PDF Text Extraction
-- [LangChain](https://www.langchain.com/) – LLM Orchestration
-- [Google Generative AI (Gemini)](https://ai.google.dev/) – LLM + Embeddings
-- [FAISS](https://github.com/facebookresearch/faiss) – Vector Similarity Search
-- [Python-dotenv](https://pypi.org/project/python-dotenv/) – Environment Management
+Access the app online: [MultiDoc AI on Streamlit](https://multidoc-ai.streamlit.app/)
 
 ---
 
-python -m venv venv
-# Activate:
-venv\Scripts\activate        # On Windows
-source venv/bin/activate     # On macOS/Linux
+## Features
 
+- Upload **multiple PDF files** at once
+- Automatically **extract text** from PDFs
+- **Split text into chunks** for better context handling
+- Generate **vector embeddings** using Google Generative AI
+- Query PDFs with **AI-powered conversational Q&A**
+- Simple, clean **Streamlit interface**
+- Developer credit in sidebar  
 
+---
 
-pip install -r requirements.txt
+## Technologies Used
 
+- **Python 3.13**
+- **Streamlit** – Web app interface
+- **LangChain** – Conversational AI
+- **Google Generative AI** – Embeddings and chat
+- **FAISS** – Vector database for semantic search
+- **PyPDF2** – PDF text extraction
+- **python-dotenv** – Load API keys from `.env`
 
+---
 
+## Getting Started (Local)
 
+1. **Create a virtual environment
+-python -m venv venv
+-source venv/bin/activate   # Linux/macOS
+-venv\Scripts\activate      # Windows
+
+2. Install dependencies
+-pip install -r requirements.txt
+
+3.Add API key
+-Create a .env file in the root directory:
+-GOOGLE_API_KEY=your_google_api_key
+
+4.Run the app
+-streamlit run bot.py
 
 
 
